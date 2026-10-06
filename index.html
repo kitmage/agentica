@@ -1,5 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><title>Hello World</title></head>
-<body><h1>Hello World</h1></body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>USS Princeton (CG-59) &mdash; Honor and Glory</title>
+<meta name="description" content="USS Princeton (CG-59), a Ticonderoga-class guided missile cruiser of the United States Navy. Commissioned 1989.">
+<style>
+  :root {
+    --navy: #0a1a33;
+    --navy-deep: #060f20;
+    --gold: #c9a227;
+    --gold-soft: #e3c565;
+    --steel: #9db4d0;
+    --paper: #f4f6fa;
+    --ink: #1c2733;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: var(--navy-deep);
+    color: var(--paper);
+    line-height: 1.65;
+  }
+  .hero {
+    background: linear-gradient(160deg, #0a1a33 0%, #12305e 55%, #0a1a33 100%);
+    text-align: center;
+    padding: 5rem 1.5rem 4rem;
+    border-bottom: 4px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 120%, rgba(201,162,39,.18), transparent 60%);
+    pointer-events: none;
+  }
+  .crest {
+    width: 92px; height: 92px; margin: 0 auto 1.2rem;
+    border: 3px solid var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; font-weight: 700; color: var(--gold);
+    background: rgba(201,162,39,.08);
+    position: relative; z-index: 1;
+  }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: .08em; position: relative; z-index: 1; }
+  .hero h1 .hull { color: var(--gold); }
+  .motto {
+    font-style: italic; color: var(--gold-soft); letter-spacing: .25em;
+    text-transform: uppercase; font-size: .95rem; margin-top: .6rem;
+    position: relative; z-index: 1;
+  }
+  .class-line { color: var(--steel); margin-top: .8rem; font-size: 1.05rem; position: relative; z-index: 1; }
+  .status-pill {
+    display: inline-block; margin-top: 1.4rem; padding: .45rem 1.3rem;
+    border: 1px solid var(--gold); border-radius: 999px;
+    color: var(--gold-soft); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase;
+    position: relative; z-index: 1;
+  }
+  main { max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem; }
+  section { margin-bottom: 3.5rem; }
+  h2 {
+    color: var(--gold); font-size: 1.4rem; letter-spacing: .12em; text-transform: uppercase;
+    border-bottom: 1px solid rgba(201,162,39,.35); padding-bottom: .5rem; margin-bottom: 1.4rem;
+  }
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;
+  }
+  .stat {
+    background: rgba(157,180,208,.07); border: 1px solid rgba(157,180,208,.25);
+    border-radius: 10px; padding: 1.1rem 1.2rem;
+  }
+  .stat .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .15em; color: var(--steel); }
+  .stat .value { font-size: 1.15rem; font-weight: 600; margin-top: .3rem; }
+  .two-col { display: grid; grid-template-columns: 1fr; gap: 1.6rem; }
+  @media (min-width: 720px) { .two-col { grid-template-columns: 1fr 1fr; } }
+  .card {
+    background: rgba(157,180,208,.07); border: 1px solid rgba(157,180,208,.25);
+    border-radius: 10px; padding: 1.5rem;
+  }
+  .card h3 { color: var(--gold-soft); margin-bottom: .6rem; font-size: 1.05rem; }
+  .card ul { margin-left: 1.2rem; }
+  .card li { margin-bottom: .45rem; }
+  .timeline { position: relative; margin-left: .6rem; padding-left: 1.6rem; border-left: 2px solid rgba(201,162,39,.4); }
+  .event { margin-bottom: 1.5rem; position: relative; }
+  .event::before {
+    content: ""; position: absolute; left: -1.95rem; top: .4rem;
+    width: .75rem; height: .75rem; border-radius: 50%;
+    background: var(--gold); box-shadow: 0 0 0 4px rgba(201,162,39,.18);
+  }
+  .event .year { color: var(--gold-soft); font-weight: 700; letter-spacing: .06em; }
+  .quote {
+    font-style: italic; color: var(--steel); border-left: 3px solid var(--gold);
+    padding: .6rem 1.2rem; margin: 1.4rem 0; font-size: 1.05rem;
+  }
+  footer {
+    text-align: center; padding: 2.5rem 1.5rem; color: var(--steel);
+    border-top: 1px solid rgba(157,180,208,.25); font-size: .9rem;
+  }
+  footer a { color: var(--gold-soft); }
+  .flag { letter-spacing: .3em; color: var(--gold); font-size: .8rem; text-transform: uppercase; margin-top: 1rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="crest">CG&#8209;59</div>
+  <h1>USS <span class="hull">Princeton</span></h1>
+  <div class="motto">&ldquo;Honor and Glory&rdquo;</div>
+  <p class="class-line">Ticonderoga-class Guided Missile Cruiser &middot; United States Navy</p>
+  <span class="status-pill">In Active Commissioned Service</span>
+</header>
+
+<main>
+
+  <section>
+    <h2>Ship&rsquo;s Particulars</h2>
+    <div class="stats">
+      <div class="stat"><div class="label">Hull Number</div><div class="value">CG-59</div></div>
+      <div class="stat"><div class="label">Class</div><div class="value">Ticonderoga</div></div>
+      <div class="stat"><div class="label">Builder</div><div class="value">Ingalls Shipbuilding, Pascagoula, MS</div></div>
+      <div class="stat"><div class="label">Laid Down</div><div class="value">15 October 1986</div></div>
+      <div class="stat"><div class="label">Launched</div><div class="value">2 October 1987</div></div>
+      <div class="stat"><div class="label">Commissioned</div><div class="value">11 February 1989</div></div>
+      <div class="stat"><div class="label">Homeport</div><div class="value">San Diego, California</div></div>
+      <div class="stat"><div class="label">Displacement</div><div class="value">&asymp; 9,600 tons</div></div>
+      <div class="stat"><div class="label">Length / Beam</div><div class="value">567 ft / 55 ft</div></div>
+      <div class="stat"><div class="label">Speed</div><div class="value">32+ knots</div></div>
+      <div class="stat"><div class="label">Complement</div><div class="value">&asymp; 33 officers, 357 enlisted</div></div>
+      <div class="stat"><div class="label">Distinction</div><div class="value">Oldest active Ticonderoga cruiser</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Namesake</h2>
+    <p>
+      USS <i>Princeton</i> is named for the American victories over the British at the
+      <strong>Battle of Princeton</strong>, New Jersey, on 3 January 1777, when General
+      George Washington&rsquo;s Continental Army turned the tide of the Revolutionary War.
+      She is the sixth U.S. Navy ship to bear the name <i>Princeton</i>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Weapons &amp; Sensors</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>Aegis Combat System</h3>
+        <ul>
+          <li><i>Princeton</i> was the first Ticonderoga-class cruiser fitted with the upgraded <strong>AN/SPY-1B</strong> radar &mdash; a major leap in detection and resistance to enemy electronic countermeasures.</li>
+          <li>Paired with the Mk 99 Fire Control System to guide Standard Missiles against aircraft and missiles at extended range.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Armament</h3>
+        <ul>
+          <li>122-cell Mk 41 Vertical Launching System &mdash; Tomahawk, Standard, ESSM and ASROC missiles</li>
+          <li>Two Mk 45 5-inch/62 caliber naval guns</li>
+          <li>Phalanx close-in weapon systems</li>
+          <li>Two MH-60R Seahawk helicopters</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Service History</h2>
+    <div class="timeline">
+      <div class="event">
+        <div class="year">1989</div>
+        <p>Commissioned 11 February at Ingalls Shipbuilding, Pascagoula, Mississippi. Transited the Panama Canal to her first homeport, Long Beach, California.</p>
+      </div>
+      <div class="event">
+        <div class="year">1990</div>
+        <p>Served as flagship for the first U.S. Navy visit to the Soviet Pacific port of <strong>Vladivostok</strong> since before World War II.</p>
+      </div>
+      <div class="event">
+        <div class="year">1991 &mdash; Desert Storm</div>
+        <p>On 18 February, while operating in the northern Persian Gulf, <i>Princeton</i> struck two Iraqi influence mines &mdash; cracking her superstructure and jamming her port rudder. Her crew fought the damage, restored the ship, and remained on station. She earned the <strong>Combat Action Ribbon</strong>.</p>
+      </div>
+      <div class="event">
+        <div class="year">1998 &ndash; 1999</div>
+        <p>Deployed in support of <strong>Operation Desert Fox</strong>, striking Iraqi targets.</p>
+      </div>
+      <div class="event">
+        <div class="year">2001 &ndash; 2002</div>
+        <p>Fired Tomahawk cruise missiles in the opening strikes of <strong>Operation Enduring Freedom</strong>.</p>
+      </div>
+      <div class="event">
+        <div class="year">2003</div>
+        <p>Deployed for <strong>Operation Iraqi Freedom</strong>, providing air defense and strike support in the Arabian Gulf.</p>
+      </div>
+      <div class="event">
+        <div class="year">Today</div>
+        <p>Homeported in San Diego, <i>Princeton</i> remains the <strong>oldest Ticonderoga-class cruiser still in active commissioned service</strong> &mdash; over 35 years of Honor and Glory.</p>
+      </div>
+    </div>
+    <div class="quote">
+      &ldquo;She was built to fight, damaged in battle, repaired by her crew, and sent back to the fight &mdash; the very definition of Honor and Glory.&rdquo;
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>USS Princeton (CG-59) &mdash; Ticonderoga-class Guided Missile Cruiser</p>
+  <p class="flag">United States Navy</p>
+  <p style="margin-top:1rem;">
+    <a href="https://en.wikipedia.org/wiki/USS_Princeton_(CG-59)" target="_blank" rel="noopener">Read more on Wikipedia</a>
+  </p>
+</footer>
+
+</body>
 </html>
