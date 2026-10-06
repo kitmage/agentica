@@ -100,7 +100,26 @@
   }
   footer a { color: var(--gold-soft); }
   .flag { letter-spacing: .3em; color: var(--gold); font-size: .8rem; text-transform: uppercase; margin-top: 1rem; }
-  .gallery { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }   @media (min-width: 720px) { .gallery { grid-template-columns: repeat(3, 1fr); } }   figure.photo {     background: rgba(157,180,208,.07); border: 1px solid rgba(157,180,208,.25);     border-radius: 10px; overflow: hidden; margin: 0;   }   figure.photo img { width: 100%; height: 220px; object-fit: cover; display: block; }   figure.photo figcaption { padding: .8rem 1rem; font-size: .85rem; color: var(--steel); }   figure.photo .credit {     display: block; margin-top: .35rem; font-size: .72rem; letter-spacing: .1em;     text-transform: uppercase; color: var(--gold-soft);   } </style>
+  .gallery { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }   @media (min-width: 720px) { .gallery { grid-template-columns: repeat(3, 1fr); } }   figure.photo {     background: rgba(157,180,208,.07); border: 1px solid rgba(157,180,208,.25);     border-radius: 10px; overflow: hidden; margin: 0;   }   figure.photo img { width: 100%; height: 220px; object-fit: cover; display: block; }   figure.photo figcaption { padding: .8rem 1rem; font-size: .85rem; color: var(--steel); }   figure.photo .credit {     display: block; margin-top: .35rem; font-size: .72rem; letter-spacing: .1em;     text-transform: uppercase; color: var(--gold-soft);   } 
+  .news-item {
+    background: rgba(201,162,39,.06);
+    border: 1px solid rgba(201,162,39,.35);
+    border-radius: 10px;
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .news-item .news-date {
+    color: var(--gold-soft);
+    font-size: .8rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: .35rem;
+  }
+  .news-item h3 { color: var(--paper); font-size: 1.2rem; margin-bottom: .5rem; }
+  .news-item p { margin-bottom: .6rem; }
+  .news-item p:last-child { margin-bottom: 0; }
+  .news-item a { color: var(--gold-soft); }
+</style>
 </head>
 <body>
 
@@ -113,6 +132,22 @@
 </header>
 
 <main>
+
+  <section>
+    <h2>News</h2>
+    <!-- PRINCETON-NEWS: newest items first. The weekly news check inserts new <article class="news-item"> blocks directly below this comment. Keep each item to a headline, one date line, 1-2 short paragraphs, and a source link. -->
+    <article class="news-item">
+      <div class="news-date">October 2026</div>
+      <h3>Princeton deployed to U.S. 5th Fleet</h3>
+      <p>
+        <i>Princeton</i> is currently deployed to the U.S. 5th Fleet area of operations in support of
+        maritime security and stability in the Middle East. Official U.S. Navy photos released in
+        September 2026 show the crew conducting nighttime flight operations with an MH-60R Seahawk
+        of Helicopter Maritime Strike Squadron (HSM) 75.
+      </p>
+      <p><a href="https://www.dvidshub.net/image/9948201/uss-princeton-conducts-nighttime-flight-operations" target="_blank" rel="noopener">Sept. 8, 2026: nighttime flight operations (DVIDS)</a></p>
+    </article>
+  </section>
 
   <section>
     <h2>Ship&rsquo;s Particulars</h2>
