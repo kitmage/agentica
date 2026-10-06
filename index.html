@@ -119,6 +119,10 @@
   .news-item p { margin-bottom: .6rem; }
   .news-item p:last-child { margin-bottom: 0; }
   .news-item a { color: var(--gold-soft); }
+  .news-item .news-photo { margin: 0 0 1rem; }
+  .news-item .news-photo img { width: 100%; height: auto; border-radius: 8px; display: block; }
+  .news-item .news-photo figcaption { padding-top: .6rem; font-size: .85rem; color: var(--steel); }
+  .news-item .news-photo .credit { display: block; margin-top: .3rem; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-soft); }
 </style>
 </head>
 <body>
@@ -139,6 +143,10 @@
     <article class="news-item">
       <div class="news-date">October 2026</div>
       <h3>Princeton deployed to U.S. 5th Fleet</h3>
+      <figure class="news-photo">
+        <img src="images/princeton-night-flight-ops.jpg" alt="USS Princeton (CG-59) conducting nighttime flight operations in the U.S. 5th Fleet area of operations, Sept. 8, 2026">
+        <figcaption>Flight deck crew monitor an MH-60R Seahawk during nighttime flight operations, Sept. 8, 2026.<span class="credit">U.S. Navy photo</span></figcaption>
+      </figure>
       <p>
         <i>Princeton</i> is currently deployed to the U.S. 5th Fleet area of operations in support of
         maritime security and stability in the Middle East. Official U.S. Navy photos released in
